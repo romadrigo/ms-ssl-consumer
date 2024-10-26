@@ -1,7 +1,6 @@
 package com.rrodrigo.model;
 
 import java.util.Date;
-import java.util.UUID;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
