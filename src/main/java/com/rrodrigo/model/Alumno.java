@@ -25,7 +25,7 @@ import lombok.Setter;
 public class Alumno {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "nombres")

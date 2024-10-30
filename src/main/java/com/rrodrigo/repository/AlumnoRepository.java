@@ -10,4 +10,5 @@ import com.rrodrigo.model.Alumno;
 public interface AlumnoRepository extends JpaRepository<Alumno, UUID> {
     
     Optional<Alumno> findByDni(String dni);
+
 }

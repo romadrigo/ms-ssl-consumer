@@ -27,7 +27,7 @@ import lombok.Setter;
 public class Evaluacion {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "notas")
@@ -35,10 +35,6 @@ public class Evaluacion {
 
     @Column(name = "promedio")
     private double promedio;
-
-    @Column(name = "datetime")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date datetime;
 
     @OneToOne(mappedBy = "evaluacion")
     private Alumno alumno;
