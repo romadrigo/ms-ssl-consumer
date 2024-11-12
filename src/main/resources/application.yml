@@ -31,17 +31,36 @@ spring:
         "[spring.json.trusted.packages]": "*"
         "[spring.deserializer.key.delegate.class]": org.apache.kafka.common.serialization.StringDeserializer
         "[spring.deserializer.value.delegate.class]": org.springframework.kafka.support.serializer.JsonDeserializer
-
   devtools:
     livereload:
       enabled: true
     restart:
       enabled: true
-
+      
 app:
   topic:
     notas: ${TOPIC:alumnos_notas}
 
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  health:
+    livenessState:
+      enabled: true
+    readinessState:
+      enabled: true
+    restart:
+      enabled: true
+    # metrics:
+    #   enabled: ${SPRING_BOOT_METRICS:false}
+    # prometheus:
+    #   enabled: ${SPRING_BOOT_METRICS:false}
+  endpoints:
+    web:
+      exposure:
+        include: '*'
 logging:
   level:
     root: INFO
